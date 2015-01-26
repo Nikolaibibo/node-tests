@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Nikolaibibo/node-tests",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "socket.io": "^1.3.2"
   }
 }
