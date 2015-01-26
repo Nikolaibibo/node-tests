@@ -1,0 +1,27 @@
+{
+  "name": "node-test",
+  "version": "1.0.0",
+  "description": "Just a test for evennnode hosting with express and socket.io",
+  "main": "app.js",
+  "scripts": {
+    "test": "node run app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nikolaibibo/node-tests.git"
+  },
+  "keywords": [
+    "node",
+    "socket.io",
+    "express"
+  ],
+  "author": "Nikolai Bockholt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikolaibibo/node-tests/issues"
+  },
+  "homepage": "https://github.com/Nikolaibibo/node-tests",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}
