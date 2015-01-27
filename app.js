@@ -1,17 +1,22 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var ws = require("nodejs-websocket")
+var port = 8000;
 
-app.get('/', function(req, res){
-  res.sendfile('index.html');
-});
+// Create the websocket server, provide connection callback
+var server = ws.createServer(function (conn) {
+  console.log("New connection");
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+  // If we get text from the client, and echo it
+  conn.on("text", function (str) {
+    // print it out
+    console.log("Received "+str)
+    // Send it back (but more excited)
+    conn.sendText(str.toUpperCase()+"!!!")
   });
-});
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
+  // When the client closes the connection, notify us
+  conn.on("close", function (code, reason) {
+      console.log("Connection closed")
+  });
+}).listen(port);
+
+console.log('listening on port', port);
